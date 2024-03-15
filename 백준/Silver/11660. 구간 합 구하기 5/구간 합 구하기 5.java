@@ -26,6 +26,8 @@ public class Main {
 			}
 		}
 		
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
 		for(int i=0; i<m; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
 			int x1 = Integer.parseInt(st.nextToken());
@@ -34,7 +36,9 @@ public class Main {
 			int y2 = Integer.parseInt(st.nextToken());
 			
 			int sum = prefix[x2][y2] - prefix[x1-1][y2] - prefix[x2][y1-1] + prefix[x1-1][y1-1];
-			System.out.println(sum);
+			bw.write(sum + "\n");
 		}
+		bw.flush();
+		bw.close();
 	}
 }
