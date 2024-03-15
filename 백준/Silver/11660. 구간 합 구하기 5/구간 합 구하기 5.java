@@ -12,20 +12,20 @@ public class Main {
 		int m = Integer.parseInt(st.nextToken());
 		
 		int[][] map = new int[n][n];
-		for(int i=0; i<n; i++) {
-			st = new StringTokenizer(br.readLine(), " ");
-			for(int j=0; j<n; j++)
-				map[i][j] = Integer.parseInt(st.nextToken());
-		}
-		
 		int[][] prefix = new int[n+1][n+1];
-		for(int i=0; i<n+1; i++)
-			for(int j=0; j<n+1; j++)
-				prefix[i][j] = 0;
 		
-		for(int i=1; i<n+1; i++)
-			for(int j=1; j<n+1; j++)
-				prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1] + map[i-1][j-1];
+		for(int i=0; i<n+1; i++) {
+			if(i != 0)
+				st = new StringTokenizer(br.readLine(), " ");
+			for(int j=0; j<n+1; j++) {
+				if(i == 0 || j == 0)
+					prefix[i][j] = 0;
+				else {
+					map[i-1][j-1] = Integer.parseInt(st.nextToken());
+					prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1] + map[i-1][j-1];
+				}
+			}
+		}
 		
 		for(int i=0; i<m; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
