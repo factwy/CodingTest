@@ -11,7 +11,6 @@ public class Main {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		
-		int[][] map = new int[n][n];
 		int[][] prefix = new int[n+1][n+1];
 		
 		for(int i=0; i<n+1; i++) {
@@ -21,8 +20,8 @@ public class Main {
 				if(i == 0 || j == 0)
 					prefix[i][j] = 0;
 				else {
-					map[i-1][j-1] = Integer.parseInt(st.nextToken());
-					prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1] + map[i-1][j-1];
+					int num = Integer.parseInt(st.nextToken());
+					prefix[i][j] = prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1] + num;
 				}
 			}
 		}
