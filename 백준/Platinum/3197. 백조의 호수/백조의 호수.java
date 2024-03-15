@@ -24,7 +24,7 @@ public class Main {
 		map = new int[r][c];
 		Pos[] target = new Pos[2];
 		int index = 0;
-		Queue<Pos> q = new LinkedList<Pos>();
+		Queue<Pos> q = new ArrayDeque<Pos>();
 		
 		for(int i=0; i<r; i++) {
 			String input = br.readLine();
@@ -71,7 +71,7 @@ public class Main {
 		while(s < e) {
 			mid = (s + e) / 2;
 					
-			Queue<Pos> q = new LinkedList<Pos>();
+			Queue<Pos> q = new ArrayDeque<Pos>();
 			int[] dx = {-1, 0, 1, 0}, dy = {0, -1, 0, 1};
 			boolean[][] visited = new boolean[r][c];
 					
