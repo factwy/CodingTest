@@ -30,6 +30,7 @@ public class Main {
 					prefix[i][j][map[i-1][j-1]-1] ++;
 			}
 		
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int q = Integer.parseInt(br.readLine());
 		for(int a=0; a<q; a++) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -43,7 +44,10 @@ public class Main {
 				if(prefix[x2][y2][i] - prefix[x1-1][y2][i] - prefix[x2][y1-1][i] + prefix[x1-1][y1-1][i] > 0)
 					cnt ++;
 			
-			System.out.println(cnt);
+			bw.write(cnt + "\n");
 		}
+		bw.flush();
+		bw.close();
+		br.close();
 	}
 }
