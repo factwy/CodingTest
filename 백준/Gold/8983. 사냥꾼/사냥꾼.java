@@ -24,7 +24,7 @@ public class Main {
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
 			
-			int start = 0, end = m;
+			int start = 0, end = m-1;
 			while(start <= end) {
 				int mid = (start + end) / 2;
 				
