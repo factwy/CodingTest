@@ -11,7 +11,7 @@ cnt = 0
 for i in range(0, n):
     x, y = map(int, input().split())
 
-    start, end = 0, m
+    start, end = 0, m-1
     while start <= end:
         mid = (start + end) // 2
 
