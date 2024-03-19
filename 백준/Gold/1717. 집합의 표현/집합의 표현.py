@@ -6,8 +6,6 @@ node_rank = [0 for i in range(n+1)]
 
 
 def find(idx):
-    global parent
-
     if idx == parent[idx]:
         return idx
     parent[idx] = find(parent[idx])
@@ -15,8 +13,6 @@ def find(idx):
 
 
 def union(a, b):
-    global parent
-
     pa = find(a)
     pb = find(b)
 
