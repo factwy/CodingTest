@@ -3,8 +3,8 @@ import sys
 n, m = map(int, sys.stdin.readline().split())
 card = list(map(int, sys.stdin.readline().split()))
 
-start, end = 0, n
-res = 0
+start, end = 1, (n // m) + 1
+res = 1
 while start <= end:
     mid = (start + end) // 2
 
@@ -12,6 +12,7 @@ while start <= end:
     l, r = 0, 0
     cnt = 0
     while l <= r < n and l < n:
+
         if card[r] in card_pack:
             while card[l] != card[r]:
                 if card[l] in card_pack:
@@ -24,8 +25,7 @@ while start <= end:
         if (r - l + 1) == mid:
             cnt += 1
             card_pack = set()
-            r += 1
-            l = r
+            l = r+1
         if r < n-1:
             r += 1
 
