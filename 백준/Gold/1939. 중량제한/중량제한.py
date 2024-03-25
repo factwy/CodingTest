@@ -32,7 +32,7 @@ for _ in range(m):
     a, b, c = map(int, sys.stdin.readline().split())
     graph.append([c, a, b])
     graph.append([c, b, a])
-graph.sort(key=lambda x: x[0])
+graph.sort(key=lambda x: -x[0])
 
 a, b = map(int, sys.stdin.readline().split())
 
